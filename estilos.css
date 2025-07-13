@@ -12,11 +12,25 @@ h1 {
 }
 
 #malla {
+  margin-top: 30px;
+}
+
+.semestre {
+  margin-bottom: 40px;
+}
+
+.semestre h2 {
+  color: #6a1b9a;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.fila-cursos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  margin-top: 30px;
+  gap: 12px;
 }
 
 .curso {
@@ -24,7 +38,6 @@ h1 {
   border: 2px solid #9b59b6;
   border-radius: 10px;
   width: 200px;
-  height: auto;
   padding: 10px;
   text-align: center;
   cursor: pointer;
@@ -50,4 +63,19 @@ h1 {
   color: #999;
   cursor: not-allowed;
   pointer-events: none;
+}
+
+#resetBtn {
+  background-color: #7e57c2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#resetBtn:hover {
+  background-color: #6a1b9a;
 }
