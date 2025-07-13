@@ -1,63 +1,68 @@
 const cursos = [
-  { nombre: "Razonamiento Lógico Matemático", requisitos: [] },
-  { nombre: "Metodología Del Trabajo Intelectual Universitario", requisitos: [] },
-  { nombre: "Calculo 1", requisitos: [] },
-  { nombre: "Física 1", requisitos: [] },
-  { nombre: "Química General", requisitos: [] },
-  { nombre: "Filosofía De Las Ciencias", requisitos: [] },
+  // PRIMER AÑO
+  { nombre: "Razonamiento Lógico Matemático", requisitos: [], anio: 1, semestre: "I" },
+  { nombre: "Metodología Del Trabajo Intelectual Universitario", requisitos: [], anio: 1, semestre: "I" },
+  { nombre: "Calculo 1", requisitos: [], anio: 1, semestre: "I" },
+  { nombre: "Física 1", requisitos: [], anio: 1, semestre: "I" },
+  { nombre: "Química General", requisitos: [], anio: 1, semestre: "I" },
+  { nombre: "Filosofía De Las Ciencias", requisitos: [], anio: 1, semestre: "I" },
 
-  { nombre: "Introducción A La Ingeniería Química", requisitos: [] },
-  { nombre: "Calculo 2", requisitos: ["Calculo 1"] },
-  { nombre: "Física 2", requisitos: ["Física 1"] },
-  { nombre: "Química Inorgánica Aplicada", requisitos: [] },
-  { nombre: "Comunicación Integral", requisitos: [] },
-  { nombre: "Realidad Nacional", requisitos: [] },
+  { nombre: "Introducción A La Ingeniería Química", requisitos: [], anio: 1, semestre: "II" },
+  { nombre: "Calculo 2", requisitos: ["Calculo 1"], anio: 1, semestre: "II" },
+  { nombre: "Física 2", requisitos: ["Física 1"], anio: 1, semestre: "II" },
+  { nombre: "Química Inorgánica Aplicada", requisitos: [], anio: 1, semestre: "II" },
+  { nombre: "Comunicación Integral", requisitos: [], anio: 1, semestre: "II" },
+  { nombre: "Realidad Nacional", requisitos: [], anio: 1, semestre: "II" },
 
-  { nombre: "Ciudadanía E Interculturalidad", requisitos: [] },
-  { nombre: "Ingles", requisitos: [] },
-  { nombre: "Algebra Lineal", requisitos: ["Calculo 2"] },
-  { nombre: "Fisicoquímica 1", requisitos: ["Física 2"] },
-  { nombre: "Química Orgánica 1", requisitos: ["Química Inorgánica Aplicada"] },
-  { nombre: "Ecología Y Conservación Ambiental", requisitos: [] },
+  // SEGUNDO AÑO
+  { nombre: "Ciudadanía E Interculturalidad", requisitos: [], anio: 2, semestre: "III" },
+  { nombre: "Ingles", requisitos: [], anio: 2, semestre: "III" },
+  { nombre: "Algebra Lineal", requisitos: ["Calculo 2"], anio: 2, semestre: "III" },
+  { nombre: "Fisicoquímica 1", requisitos: ["Física 2"], anio: 2, semestre: "III" },
+  { nombre: "Química Orgánica 1", requisitos: ["Química Inorgánica Aplicada"], anio: 2, semestre: "III" },
+  { nombre: "Ecología Y Conservación Ambiental", requisitos: [], anio: 2, semestre: "III" },
 
-  { nombre: "Economía", requisitos: [] },
-  { nombre: "Computación Aplicada", requisitos: ["Algebra Lineal"] },
-  { nombre: "Ecuaciones Diferenciales", requisitos: ["Algebra Lineal"] },
-  { nombre: "Fisicoquímica 2", requisitos: ["Fisicoquímica 1"] },
-  { nombre: "Química Orgánica 2", requisitos: ["Química Orgánica 1"] },
-  { nombre: "Análisis Instrumental 1", requisitos: ["Fisicoquímica 2", "Química Orgánica 2"] },
+  { nombre: "Economía", requisitos: [], anio: 2, semestre: "IV" },
+  { nombre: "Computación Aplicada", requisitos: ["Algebra Lineal"], anio: 2, semestre: "IV" },
+  { nombre: "Ecuaciones Diferenciales", requisitos: ["Algebra Lineal"], anio: 2, semestre: "IV" },
+  { nombre: "Fisicoquímica 2", requisitos: ["Fisicoquímica 1"], anio: 2, semestre: "IV" },
+  { nombre: "Química Orgánica 2", requisitos: ["Química Orgánica 1"], anio: 2, semestre: "IV" },
+  { nombre: "Análisis Instrumental 1", requisitos: ["Fisicoquímica 2", "Química Orgánica 2"], anio: 2, semestre: "IV" },
 
-  { nombre: "Balance De Materia Y Energía", requisitos: ["Ecuaciones Diferenciales", "Fisicoquímica 2"] },
-  { nombre: "Materiales Industriales", requisitos: ["Fisicoquímica 2"] },
-  { nombre: "Métodos Numéricos", requisitos: ["Computación Aplicada", "Ecuaciones Diferenciales"] },
-  { nombre: "Diseño Experimental", requisitos: ["Computación Aplicada"] },
-  { nombre: "Análisis Instrumental 2", requisitos: ["Análisis Instrumental 1"] },
-  { nombre: "Termodinámica Aplicada", requisitos: ["Balance De Materia Y Energía"] },
+  // TERCER AÑO
+  { nombre: "Balance De Materia Y Energía", requisitos: ["Ecuaciones Diferenciales", "Fisicoquímica 2"], anio: 3, semestre: "V" },
+  { nombre: "Materiales Industriales", requisitos: ["Fisicoquímica 2"], anio: 3, semestre: "V" },
+  { nombre: "Métodos Numéricos", requisitos: ["Computación Aplicada", "Ecuaciones Diferenciales"], anio: 3, semestre: "V" },
+  { nombre: "Diseño Experimental", requisitos: ["Computación Aplicada"], anio: 3, semestre: "V" },
+  { nombre: "Análisis Instrumental 2", requisitos: ["Análisis Instrumental 1"], anio: 3, semestre: "V" },
+  { nombre: "Termodinámica Aplicada", requisitos: ["Balance De Materia Y Energía"], anio: 3, semestre: "V" },
 
-  { nombre: "Fenómenos De Transferencia", requisitos: ["Métodos Numéricos", "Balance De Materia Y Energía"] },
-  { nombre: "Electroquímica Industrial", requisitos: ["Materiales Industriales"] },
-  { nombre: "Seguridad E Higiene Industrial", requisitos: ["Diseño Experimental"] },
-  { nombre: "Operaciones Unitarias 1", requisitos: ["Fenómenos De Transferencia"] },
-  { nombre: "Ingeniería De Las Reacciones Químicas 1", requisitos: ["Termodinámica Aplicada"] },
-  { nombre: "Fundamentos De Bioprocesos", requisitos: ["Análisis Instrumental 2"] },
+  { nombre: "Fenómenos De Transferencia", requisitos: ["Métodos Numéricos", "Balance De Materia Y Energía"], anio: 3, semestre: "VI" },
+  { nombre: "Electroquímica Industrial", requisitos: ["Materiales Industriales"], anio: 3, semestre: "VI" },
+  { nombre: "Seguridad E Higiene Industrial", requisitos: ["Diseño Experimental"], anio: 3, semestre: "VI" },
+  { nombre: "Operaciones Unitarias 1", requisitos: ["Fenómenos De Transferencia"], anio: 3, semestre: "VI" },
+  { nombre: "Ingeniería De Las Reacciones Químicas 1", requisitos: ["Termodinámica Aplicada"], anio: 3, semestre: "VI" },
+  { nombre: "Fundamentos De Bioprocesos", requisitos: ["Análisis Instrumental 2"], anio: 3, semestre: "VI" },
 
-  { nombre: "Control De Procesos", requisitos: ["Fenómenos De Transferencia"] },
-  { nombre: "Operaciones Unitarias 2", requisitos: ["Operaciones Unitarias 1"] },
-  { nombre: "Ingeniería De Las Reacciones Químicas 2", requisitos: ["Ingeniería De Las Reacciones Químicas 1"] },
-  { nombre: "Bioprocesos Industriales", requisitos: ["Fundamentos De Bioprocesos"] },
-  { nombre: "Procesos Químicos Industriales", requisitos: ["Operaciones Unitarias 1", "Control De Procesos"] },
-  { nombre: "Agroindustria 1", requisitos: ["Fundamentos De Bioprocesos"] },
+  // CUARTO AÑO
+  { nombre: "Control De Procesos", requisitos: ["Fenómenos De Transferencia"], anio: 4, semestre: "VII" },
+  { nombre: "Operaciones Unitarias 2", requisitos: ["Operaciones Unitarias 1"], anio: 4, semestre: "VII" },
+  { nombre: "Ingeniería De Las Reacciones Químicas 2", requisitos: ["Ingeniería De Las Reacciones Químicas 1"], anio: 4, semestre: "VII" },
+  { nombre: "Bioprocesos Industriales", requisitos: ["Fundamentos De Bioprocesos"], anio: 4, semestre: "VII" },
+  { nombre: "Procesos Químicos Industriales", requisitos: ["Operaciones Unitarias 1", "Control De Procesos"], anio: 4, semestre: "VII" },
+  { nombre: "Agroindustria 1", requisitos: ["Fundamentos De Bioprocesos"], anio: 4, semestre: "VII" },
 
-  { nombre: "Gestión empresarial", requisitos: [] },
-  { nombre: "Operaciones Unitarias 3", requisitos: ["Operaciones Unitarias 2"] },
-  { nombre: "Simulación De Procesos", requisitos: ["Ingeniería De Las Reacciones Químicas 2", "Procesos Químicos Industriales"] },
-  { nombre: "Investigación Y Seminario De Tesis 1", requisitos: [] },
-  { nombre: "Diseño De Procesos Y Plantas Industriales", requisitos: ["Procesos Químicos Industriales"] },
-  { nombre: "Procesos Metalúrgicos 1", requisitos: ["Operaciones Unitarias 2", "Procesos Químicos Industriales"] },
+  { nombre: "Gestión empresarial", requisitos: [], anio: 4, semestre: "VIII" },
+  { nombre: "Operaciones Unitarias 3", requisitos: ["Operaciones Unitarias 2"], anio: 4, semestre: "VIII" },
+  { nombre: "Simulación De Procesos", requisitos: ["Ingeniería De Las Reacciones Químicas 2", "Procesos Químicos Industriales"], anio: 4, semestre: "VIII" },
+  { nombre: "Investigación Y Seminario De Tesis 1", requisitos: [], anio: 4, semestre: "VIII" },
+  { nombre: "Diseño De Procesos Y Plantas Industriales", requisitos: ["Procesos Químicos Industriales"], anio: 4, semestre: "VIII" },
+  { nombre: "Procesos Metalúrgicos 1", requisitos: ["Operaciones Unitarias 2", "Procesos Químicos Industriales"], anio: 4, semestre: "VIII" },
 
-  { nombre: "Ética General Y Profesional", requisitos: [] },
-  { nombre: "Investigación Y Seminario De Tesis 2", requisitos: ["Investigación Y Seminario De Tesis 1"] },
-  { nombre: "Tratamiento De La Contaminación", requisitos: ["Bioprocesos Industriales"] }
+  // QUINTO AÑO
+  { nombre: "Ética General Y Profesional", requisitos: [], anio: 5, semestre: "IX" },
+  { nombre: "Investigación Y Seminario De Tesis 2", requisitos: ["Investigación Y Seminario De Tesis 1"], anio: 5, semestre: "X" },
+  { nombre: "Tratamiento De La Contaminación", requisitos: ["Bioprocesos Industriales"], anio: 5, semestre: "X" }
 ];
 
 const malla = document.getElementById("malla");
@@ -65,46 +70,50 @@ const estadoCursos = {};
 cursos.forEach(curso => estadoCursos[curso.nombre] = false);
 
 function renderMalla() {
-  const semestres = {};
-  cursos.forEach((curso, i) => {
-    const semestre = Math.floor(i / 6) + 1;
-    if (!semestres[semestre]) semestres[semestre] = [];
-    semestres[semestre].push(curso);
-  });
-
   malla.innerHTML = "";
 
-  Object.keys(semestres).forEach(sem => {
-    const grupo = document.createElement("div");
-    grupo.className = "semestre";
-    const titulo = document.createElement("h2");
-    titulo.textContent = `Semestre ${sem}`;
-    grupo.appendChild(titulo);
+  // Agrupar por año
+  for (let anio = 1; anio <= 5; anio++) {
+    const contenedorAnio = document.createElement("div");
+    contenedorAnio.className = "semestre";
+    const tituloAnio = document.createElement("h2");
+    tituloAnio.textContent = `Año ${anio}`;
+    contenedorAnio.appendChild(tituloAnio);
 
-    const fila = document.createElement("div");
-    fila.className = "fila-cursos";
+    ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"].forEach(sem => {
+      const cursosSem = cursos.filter(c => c.anio === anio && c.semestre === sem);
+      if (cursosSem.length > 0) {
+        const subtitulo = document.createElement("h3");
+        subtitulo.textContent = `Semestre ${sem}`;
+        contenedorAnio.appendChild(subtitulo);
 
-    semestres[sem].forEach(curso => {
-      const aprobado = estadoCursos[curso.nombre];
-      const habilitado = curso.requisitos.every(req => estadoCursos[req]);
-      const div = document.createElement("div");
-      div.textContent = curso.nombre;
-      div.className = "curso" +
-        (aprobado ? " aprobado" : habilitado ? "" : " bloqueado");
+        const fila = document.createElement("div");
+        fila.className = "fila-cursos";
 
-      if (habilitado && !aprobado) {
-        div.addEventListener("click", () => {
-          estadoCursos[curso.nombre] = true;
-          renderMalla();
+        cursosSem.forEach(curso => {
+          const aprobado = estadoCursos[curso.nombre];
+          const habilitado = curso.requisitos.every(req => estadoCursos[req]);
+          const div = document.createElement("div");
+          div.textContent = curso.nombre;
+          div.className = "curso" +
+            (aprobado ? " aprobado" : habilitado ? "" : " bloqueado");
+
+          if (habilitado && !aprobado) {
+            div.addEventListener("click", () => {
+              estadoCursos[curso.nombre] = true;
+              renderMalla();
+            });
+          }
+
+          fila.appendChild(div);
         });
-      }
 
-      fila.appendChild(div);
+        contenedorAnio.appendChild(fila);
+      }
     });
 
-    grupo.appendChild(fila);
-    malla.appendChild(grupo);
-  });
+    malla.appendChild(contenedorAnio);
+  }
 }
 
 function reiniciarMalla() {
@@ -113,3 +122,4 @@ function reiniciarMalla() {
 }
 
 renderMalla();
+
