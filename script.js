@@ -52,6 +52,12 @@ const cursos = [
   { nombre: "Procesos Químicos Industriales", requisitos: ["Operaciones Unitarias 1", "Control De Procesos"], anio: 4, semestre: "VII" },
   { nombre: "Agroindustria 1", requisitos: ["Fundamentos De Bioprocesos"], anio: 4, semestre: "VII" },
 
+  // Cursos Electivos - Semestre VII
+  { nombre: "Sistemas Integrados De Gestión – E", requisitos: [], anio: 4, semestre: "VII", electivo: true },
+  { nombre: "Ingeniería Energética – E", requisitos: [], anio: 4, semestre: "VII", electivo: true },
+  { nombre: "Industria De Los Polímeros – E", requisitos: [], anio: 4, semestre: "VII", electivo: true },
+  { nombre: "Procesos Textiles Y Curtiduría – E", requisitos: [], anio: 4, semestre: "VII", electivo: true },
+
   { nombre: "Gestión empresarial", requisitos: [], anio: 4, semestre: "VIII" },
   { nombre: "Operaciones Unitarias 3", requisitos: ["Operaciones Unitarias 2"], anio: 4, semestre: "VIII" },
   { nombre: "Simulación De Procesos", requisitos: ["Ingeniería De Las Reacciones Químicas 2", "Procesos Químicos Industriales"], anio: 4, semestre: "VIII" },
@@ -61,6 +67,14 @@ const cursos = [
 
   // QUINTO AÑO
   { nombre: "Ética General Y Profesional", requisitos: [], anio: 5, semestre: "IX" },
+
+  // Cursos Electivos - Semestre X
+  { nombre: "Industria No Metálica – E", requisitos: [], anio: 5, semestre: "X", electivo: true },
+  { nombre: "Formulación Y Evaluación De Proyectos – E", requisitos: [], anio: 5, semestre: "X", electivo: true },
+  { nombre: "Catálisis Y Fenómenos De Superficie – E", requisitos: [], anio: 5, semestre: "X", electivo: true },
+  { nombre: "Procesos Metalúrgicos – E", requisitos: [], anio: 5, semestre: "X", electivo: true },
+  { nombre: "Agroindustria 2 – E", requisitos: [], anio: 5, semestre: "X", electivo: true },
+
   { nombre: "Investigación Y Seminario De Tesis 2", requisitos: ["Investigación Y Seminario De Tesis 1"], anio: 5, semestre: "X" },
   { nombre: "Tratamiento De La Contaminación", requisitos: ["Bioprocesos Industriales"], anio: 5, semestre: "X" }
 ];
@@ -72,7 +86,6 @@ cursos.forEach(curso => estadoCursos[curso.nombre] = false);
 function renderMalla() {
   malla.innerHTML = "";
 
-  // Agrupar por año
   for (let anio = 1; anio <= 5; anio++) {
     const contenedorAnio = document.createElement("div");
     contenedorAnio.className = "semestre";
@@ -96,6 +109,7 @@ function renderMalla() {
           const div = document.createElement("div");
           div.textContent = curso.nombre;
           div.className = "curso" +
+            (curso.electivo ? " electivo" : "") +
             (aprobado ? " aprobado" : habilitado ? "" : " bloqueado");
 
           if (habilitado && !aprobado) {
@@ -122,4 +136,3 @@ function reiniciarMalla() {
 }
 
 renderMalla();
-
